@@ -1,3 +1,5 @@
+const fetch = require("node-fetch");
+
 const fetchPromise = fetch(
     "https://mdn.github.io/learning-area/javascript/apis/fetching-data/can-store/products.json",
   );
