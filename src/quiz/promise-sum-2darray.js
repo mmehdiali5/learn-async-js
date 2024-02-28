@@ -63,5 +63,5 @@ const calculateSum = async (array2D) => {
     }
 }
 
-calculateSum(array2D)
+calculateSum(array2D);
 
