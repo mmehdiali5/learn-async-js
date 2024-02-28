@@ -1,7 +1,7 @@
 function sum2DArray(arr) {
     return new Promise((resolve, reject) => {
         console.log('Sum called ... ');
-        if(Array.isArray(arr)) {
+        if (Array.isArray(arr)) {
             setTimeout(() => {
                 let sum = 0;
                 for (let i = 0; i < arr.length; i++) {
@@ -12,12 +12,15 @@ function sum2DArray(arr) {
                 console.log('resolving ... ');
                 resolve(sum);
             }, 0);
-        }
-        else {
+        } else {
             console.log('rejecting ... ');
             reject('BAD INPUT: Expected array as input');
         }
         console.log('returning from sum');
+    }).then((sum) => {
+        console.log("Sum is " + sum);
+    }).catch((err) => {
+        console.log(err)
     });
 }
 

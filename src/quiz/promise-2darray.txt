@@ -1,1 +1,21 @@
 Explain the code execution based on the order of the messages logged in src/quiz/promise-2darray.txt.
+
+When the sum2DArray function is called with a valid 2D array as an argument, the following sequence of events occurs:
+
+"Sum called ..." is logged, indicating the start of the function execution.
+The function checks if the input arr is an array. Since it is, it proceeds.
+A setTimeout is used to simulate an asynchronous operation. However, the delay is set to 0 milliseconds, so the callback function inside setTimeout will be executed as soon as the current call stack is cleared.
+Within the setTimeout callback, the sum of all elements in the 2D array is calculated.
+"resolving ..." is logged, indicating that the promise is resolving.
+The resolve function is called with the calculated sum, resolving the promise.
+"Sum is 45" is logged, displaying the calculated sum.
+
+When the sum2DArray function is called with an invalid input (non-array), the following sequence of events occurs:
+"Sum called ..." is logged, indicating the start of the function execution.
+The function checks if the input arr is an array. Since it's not (it's a non-array input), the function rejects the promise.
+"rejecting ..." is logged, indicating that the promise is being rejected due to bad input.
+"BAD INPUT: Expected array as input" is logged, indicating the reason for rejection.
+The rejection is caught by the catch block, and the error message is logged.
+
+The order is because when setTimeout is called it mimics an sync call so the control returns to main flow and displays that
+Promise is pending which is resolved using then. Similarly, the reject is handled using catch.
