@@ -1,3 +1,5 @@
+const fetch = require("node-fetch");
+
 async function fetchProducts() {
     console.log('Begin fetch ... ');
         // after this line, our function will wait for the `fetch()` call to be settled
